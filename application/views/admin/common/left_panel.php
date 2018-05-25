@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0; text-align: center;">
-              <a href="<?php echo base_url('index.php/dashboard');?>" class="site_title" style="padding-bottom: 10px">
+              <a href="<?php echo base_url('admin/index');?>" class="site_title" style="padding-bottom: 10px">
                 <img src="<?php echo base_url('assets/admin/images/logo_white.png');?>" height=100%>
               </a>
             </div>
@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><?=$this->session->userdata('user_name')?></h2>
               </div>
               <div class="clearfix"></div>
             </div>

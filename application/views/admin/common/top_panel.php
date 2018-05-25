@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="nav navbar-nav navbar-right">
           <li class="">
             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="">John Doe
+              <img src="<?php echo base_url('assets/admin/images/user.png');?>" alt=""><?=$this->session->userdata('user_name')?>
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <span>Settings</span>
                 </a>
               </li>
-              <li><a href="javascript:;">Help</a></li>
+              <li><a href="<?php echo base_url('admin/change_password') ?>">Change Password</a></li>
               <li><a href="<?php echo base_url('admin/logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
             </ul>
           </li>

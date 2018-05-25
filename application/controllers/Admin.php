@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
 	 */
 	public function login(){
 		if($this->session->userdata('user_logged_in')==TRUE){
-			redirect(base_url('admin/dashboard'), "location");
+			redirect(base_url('admin/index'), "location");
 			exit();
 		}
 		if(!empty($this->input->post('u_name')) || !empty($this->input->post('u_enc_pwd'))){
@@ -73,6 +73,10 @@ class Admin extends CI_Controller {
 
 	}
 
+	/**
+	 * [logout description]
+	 * @return [type] [description]
+	 */
 	public function logout(){
 		session_destroy();
 		unset($_SESSION["user_name"]);
@@ -134,7 +138,7 @@ class Admin extends CI_Controller {
 	 */
 	public function reset_password($randid, $userid){
 		if($this->session->userdata('user_logged_in')==TRUE){
-			redirect(base_url('admin/dashboard'), "location");
+			redirect(base_url('admin/index'), "location");
 			exit();
 		}
 		$check_reset_url = $this->Admin_model->check_reset_url($randid, $userid);
@@ -182,6 +186,48 @@ class Admin extends CI_Controller {
 			
 		$this->load->view('admin/common/header');
 		$this->load->view('admin/reset_password', $content);
+		$this->load->view('admin/common/footer');
+		
+	}
+
+	public function change_password(){
+		if(empty($this->session->userdata('user_id'))){
+			redirect(base_url('admin/login'), "location");
+			exit();
+		}
+		if(!empty($this->input->post('u_name')) || !empty($this->input->post('u_enc_pwd'))){
+			$userid = $this->session->userdata('user_id');
+			$this->form_validation->set_rules('u_old_pwd', 'Password', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('u_enc_pwd', 'Password', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('u_confirm_pwd', 'Password', 'trim|required|xss_clean|matches[u_enc_pwd]');
+			if ($this->form_validation->run() == FALSE) {
+				$u_old_pwd 		= $this->input->post('u_old_pwd');
+				$u_enc_pwd 		= $this->input->post('u_enc_pwd');
+				$u_confirm_pwd 	= $this->input->post('u_confirm_pwd');
+				$check_old_pwd = $this->Admin_model->check_old_pwd(sha1($u_old_pwd), $userid);
+				if($u_enc_pwd != $u_confirm_pwd){
+					$data['error_message2'] = 'Password didnt Match';
+				}else if(!$check_old_pwd){
+					$data['error_message2'] = 'Wrong Password';
+				}else{
+					$data = array(
+						'u_enc_pwd' => sha1($this->input->post('u_enc_pwd')),
+						'Updated_by' => "Reset Password",
+						'Updated_dtm' => date("Y-m-d H:i:s")
+					);
+					$this->Admin_model->update_data($data, $userid, "user_pk", "Internal_User");
+					$data['error_message2'] = 'Password has been changed';
+				}
+			}
+		}else{
+			$data['error_message2'] = '';
+		}
+
+		$content['data'] = $data;
+		
+			
+		$this->load->view('admin/common/header');
+		$this->load->view('admin/change_password', $content);
 		$this->load->view('admin/common/footer');
 		
 	}

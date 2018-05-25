@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="animate form login_form">
           <section class="login_content">
 
-            <form method="post" action="<?php if(!empty($data['randid']) && !empty($data['userid'])){echo base_url('admin/reset_password/'.$data['randid'].'/'.$data['userid']);}?>">
+            <form method="post" action="<?php echo base_url('admin/change_password/');?>">
               <h1><img src="<?php echo base_url('assets/admin/images/logo.png');?>" alt="logo"></h1>
               <?php
 	          	if(!empty($data['error_message'])){
@@ -20,6 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   echo $data['error_message2'];
                 }
 	          	?>
+              <div>
+                <input type="password" class="form-control" placeholder="Old Password" required="" name="u_old_pwd" />
+              </div>
               <div>
                 <input type="password" class="form-control" placeholder="New Password" required="" name="u_enc_pwd" />
               </div>

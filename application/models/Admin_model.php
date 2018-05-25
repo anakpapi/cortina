@@ -36,6 +36,14 @@ Class Admin_model extends CI_Model {
 		return $data;
 	}
 
+	public function check_old_pwd($old_pwd, $userid){
+		$query = $this->db->query("SELECT * FROM Internal_User WHERE u_enc_pwd='".$old_pwd."' and user_pk='".$userid."'");
+        $data = $query->row_array();
+		return $data;
+	}
+
+
+
 	public function update_data($data, $id, $fieldname, $tablename){
         $this->db->where($fieldname, $id);
         return $this->db->update($tablename,$data);

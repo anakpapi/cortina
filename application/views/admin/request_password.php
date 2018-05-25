@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <input type="text" class="form-control" placeholder="Email" required="" name="u_email" />
               </div>
               <div class="text-center">
-                <input type="submit" class="btn btn-default submit" value="Log in">
+                <input type="submit" class="btn btn-default submit" value="Submit">
               </div>
 
               <div class="clearfix"></div>

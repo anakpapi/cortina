@@ -18,8 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('assets/css/custom.css');?>" rel="stylesheet"> 
-    <link href="<?php echo base_url('assets/css/iclick.css');?>" rel="stylesheet"> 
+    <link href="<?php echo base_url('assets/admin/css/custom.css');?>" rel="stylesheet"> 
+    <link href="<?php echo base_url('assets/admin/css/iclick.css');?>" rel="stylesheet"> 
     
  
 	

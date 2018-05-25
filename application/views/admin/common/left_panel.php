@@ -7,8 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0; text-align: center;">
-              <a href="<?php echo base_url('index.php/dashboard');?>" class="site_title" style="padding-left:0">
-                <img src="<?php echo base_url('assets/images/iclickmedia_logo.png');?>" style="width:30px; margin-right:10px;">iClick Media
+              <a href="<?php echo base_url('index.php/dashboard');?>" class="site_title" style="padding-bottom: 10px">
+                <img src="<?php echo base_url('assets/admin/images/logo_white.png');?>" height=100%>
               </a>
             </div>
 
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic"> 
-                <img src="<?php echo base_url('assets/images/user.png');?>" alt="" class="img-circle profile_img">
+                <img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="" class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>

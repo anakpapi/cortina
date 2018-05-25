@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="nav navbar-nav navbar-right">
           <li class="">
             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              <img src="<?php echo base_url('assets/images/user.png');?>" alt="">John Doe
+              <img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="">John Doe
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </a>
               </li>
               <li><a href="javascript:;">Help</a></li>
-              <li><a href="<?php echo base_url('index.php/logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+              <li><a href="<?php echo base_url('admin/logout');?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
             </ul>
           </li>
 
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
               <li>
                 <a>
-                  <span class="image"><img src="<?php echo base_url('assets/images/user.png');?>" alt="Profile Image" /></span>
+                  <span class="image"><img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="Profile Image" /></span>
                   <span>
                     <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </li>
               <li>
                 <a>
-                  <span class="image"><img src="<?php echo base_url('assets/images/user.png');?>" alt="Profile Image" /></span>
+                  <span class="image"><img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="Profile Image" /></span>
                   <span>
                     <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </li>
               <li>
                 <a>
-                  <span class="image"><img src="<?php echo base_url('assets/images/user.png');?>" alt="Profile Image" /></span>
+                  <span class="image"><img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="Profile Image" /></span>
                   <span>
                     <span>John Smith</span>
                     <span class="time">3 mins ago</span>
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </li>
               <li>
                 <a>
-                  <span class="image"><img src="<?php echo base_url('assets/images/user.png');?>" alt="Profile Image" /></span>
+                  <span class="image"><img src="<?php echo base_url('assets/admin/images/user.png');?>" alt="Profile Image" /></span>
                   <span>
                     <span>John Smith</span>
                     <span class="time">3 mins ago</span>
